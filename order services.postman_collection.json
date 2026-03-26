@@ -1,0 +1,153 @@
+{
+  "info": {
+    "_postman_id": "",
+    "name": "order services",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "6707795"
+  },
+  "item": [
+    {
+      "name": "Consulta token",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "client_id",
+              "value": "api-gateway-client",
+              "type": "text",
+              "uuid": "27f642e7-9042-49f0-9b0c-f72af1e6abee"
+            },
+            {
+              "key": "grant_type",
+              "value": "password",
+              "type": "text",
+              "uuid": "cae935ad-f3ee-4e17-927a-21a4be89c8c3"
+            },
+            {
+              "key": "username",
+              "value": "castillo",
+              "type": "text",
+              "uuid": "0f93a4ce-3de3-4f97-a14f-f6b4c3575e7e"
+            },
+            {
+              "key": "password",
+              "value": "123456",
+              "type": "text",
+              "uuid": "717e2acd-e866-45e6-9704-c7693410e283"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:8080/realms/castillo-realm/protocol/openid-connect/token",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "realms",
+            "castillo-realm",
+            "protocol",
+            "openid-connect",
+            "token"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "consulta Order",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJFUEhWYmp4RDBzYmhSY1M3RjNDNzJIS0NPMDFOVW9iMFZQVzdVUHRWRzVzIn0.eyJleHAiOjE3NzQ1NDMzNjcsImlhdCI6MTc3NDU0MzA2NywianRpIjoiMTkyZTRhNTktNjU1ZC00ZTU5LTk1YzEtNjFmOGVlZGM1NmM5IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3JlYWxtcy9jYXN0aWxsby1yZWFsbSIsInN1YiI6IjM4M2JkMjJmLTA1NTUtNGQzMi04N2I3LTZkZDk1YTNlMWJiNyIsInR5cCI6IkJlYXJlciIsImF6cCI6ImFwaS1nYXRld2F5LWNsaWVudCIsInNlc3Npb25fc3RhdGUiOiJjOWQwY2FkNC00ZDUwLTRjZjItYmU5Ni0wMGE5ODY5NmE5NjciLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIioiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIkFETUlOIiwiVVNFUiJdfSwic2NvcGUiOiJlbWFpbCBwcm9maWxlIiwic2lkIjoiYzlkMGNhZDQtNGQ1MC00Y2YyLWJlOTYtMDBhOTg2OTZhOTY3IiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJDYXN0aWxsbyBEZWlseW1hciIsInByZWZlcnJlZF91c2VybmFtZSI6ImNhc3RpbGxvIiwiZ2l2ZW5fbmFtZSI6IkNhc3RpbGxvIiwiZmFtaWx5X25hbWUiOiJEZWlseW1hciIsImVtYWlsIjoiY2FzdGlsbG9AY2FzdGlsbG8uY29tIn0.KScLgTBx-U0Piq06ZOHbhB9xT6Z9z9vN9hFkaW8VciJcnRxXZcA6G6542yqY3NSshhTJQU0o5b8ixQ0jowRLz5a1FYNvyqjrvLzVfxsOsDbqLrgI55pXnqW8K7ZAolqYEmtkyhkXnaYsHd6Q1JLA1e61J0I1-cQ5snbMXtegm5-QNKXhaUaeu8jADjPxGAtW19XPD7vdXr37kmcBJJRuAvRs9LTEC9FrrDBjXMVl6yvaHu_OcrV4Hf640l88J-b-vr4q16LTUWBGGMRTUFLtxAFeOzbFU3KYLx_IkQWNkCjzB3F1GBFswZl7EJ7Uq35Zm388h7Iaax-STk9TnmBrTw",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8081/api/order/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "order",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "consulta User",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJFUEhWYmp4RDBzYmhSY1M3RjNDNzJIS0NPMDFOVW9iMFZQVzdVUHRWRzVzIn0.eyJleHAiOjE3NzQ1NDMzNjcsImlhdCI6MTc3NDU0MzA2NywianRpIjoiMTkyZTRhNTktNjU1ZC00ZTU5LTk1YzEtNjFmOGVlZGM1NmM5IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3JlYWxtcy9jYXN0aWxsby1yZWFsbSIsInN1YiI6IjM4M2JkMjJmLTA1NTUtNGQzMi04N2I3LTZkZDk1YTNlMWJiNyIsInR5cCI6IkJlYXJlciIsImF6cCI6ImFwaS1nYXRld2F5LWNsaWVudCIsInNlc3Npb25fc3RhdGUiOiJjOWQwY2FkNC00ZDUwLTRjZjItYmU5Ni0wMGE5ODY5NmE5NjciLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIioiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIkFETUlOIiwiVVNFUiJdfSwic2NvcGUiOiJlbWFpbCBwcm9maWxlIiwic2lkIjoiYzlkMGNhZDQtNGQ1MC00Y2YyLWJlOTYtMDBhOTg2OTZhOTY3IiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJDYXN0aWxsbyBEZWlseW1hciIsInByZWZlcnJlZF91c2VybmFtZSI6ImNhc3RpbGxvIiwiZ2l2ZW5fbmFtZSI6IkNhc3RpbGxvIiwiZmFtaWx5X25hbWUiOiJEZWlseW1hciIsImVtYWlsIjoiY2FzdGlsbG9AY2FzdGlsbG8uY29tIn0.KScLgTBx-U0Piq06ZOHbhB9xT6Z9z9vN9hFkaW8VciJcnRxXZcA6G6542yqY3NSshhTJQU0o5b8ixQ0jowRLz5a1FYNvyqjrvLzVfxsOsDbqLrgI55pXnqW8K7ZAolqYEmtkyhkXnaYsHd6Q1JLA1e61J0I1-cQ5snbMXtegm5-QNKXhaUaeu8jADjPxGAtW19XPD7vdXr37kmcBJJRuAvRs9LTEC9FrrDBjXMVl6yvaHu_OcrV4Hf640l88J-b-vr4q16LTUWBGGMRTUFLtxAFeOzbFU3KYLx_IkQWNkCjzB3F1GBFswZl7EJ7Uq35Zm388h7Iaax-STk9TnmBrTw",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8081/api/user",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "user"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "consulta Product",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJFUEhWYmp4RDBzYmhSY1M3RjNDNzJIS0NPMDFOVW9iMFZQVzdVUHRWRzVzIn0.eyJleHAiOjE3NzQ1NDMzNjcsImlhdCI6MTc3NDU0MzA2NywianRpIjoiMTkyZTRhNTktNjU1ZC00ZTU5LTk1YzEtNjFmOGVlZGM1NmM5IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3JlYWxtcy9jYXN0aWxsby1yZWFsbSIsInN1YiI6IjM4M2JkMjJmLTA1NTUtNGQzMi04N2I3LTZkZDk1YTNlMWJiNyIsInR5cCI6IkJlYXJlciIsImF6cCI6ImFwaS1nYXRld2F5LWNsaWVudCIsInNlc3Npb25fc3RhdGUiOiJjOWQwY2FkNC00ZDUwLTRjZjItYmU5Ni0wMGE5ODY5NmE5NjciLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIioiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIkFETUlOIiwiVVNFUiJdfSwic2NvcGUiOiJlbWFpbCBwcm9maWxlIiwic2lkIjoiYzlkMGNhZDQtNGQ1MC00Y2YyLWJlOTYtMDBhOTg2OTZhOTY3IiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJDYXN0aWxsbyBEZWlseW1hciIsInByZWZlcnJlZF91c2VybmFtZSI6ImNhc3RpbGxvIiwiZ2l2ZW5fbmFtZSI6IkNhc3RpbGxvIiwiZmFtaWx5X25hbWUiOiJEZWlseW1hciIsImVtYWlsIjoiY2FzdGlsbG9AY2FzdGlsbG8uY29tIn0.KScLgTBx-U0Piq06ZOHbhB9xT6Z9z9vN9hFkaW8VciJcnRxXZcA6G6542yqY3NSshhTJQU0o5b8ixQ0jowRLz5a1FYNvyqjrvLzVfxsOsDbqLrgI55pXnqW8K7ZAolqYEmtkyhkXnaYsHd6Q1JLA1e61J0I1-cQ5snbMXtegm5-QNKXhaUaeu8jADjPxGAtW19XPD7vdXr37kmcBJJRuAvRs9LTEC9FrrDBjXMVl6yvaHu_OcrV4Hf640l88J-b-vr4q16LTUWBGGMRTUFLtxAFeOzbFU3KYLx_IkQWNkCjzB3F1GBFswZl7EJ7Uq35Zm388h7Iaax-STk9TnmBrTw",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8081/api/product",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "product"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+version: '3.8'
+
+services:
+  # Eureka
+  discovery-server:
+    build:
+      context: ./discovery-server
+    ports:
+      - "8761:8761"
+    networks:
+      - microservices-network
+
+  # Eureka
+  gateway:
+    build:
+      context: ./gateway
+    ports:
+      - "8081:8081"
+    depends_on:
+      - discovery-server
+    networks:
+      - microservices-network
+
+  # Order-Service
+  order-service:
+    build:
+      context: ./order
+    ports:
+      - "8083:8083"
+    depends_on:
+      - discovery-server
+    networks:
+      - microservices-network
+
+  # Product-Service
+  product-service:
+    build:
+      context: ./product
+    ports:
+      - "8084:8084"
+    depends_on:
+      - discovery-server
+    networks:
+      - microservices-network
+
+  # User-Service
+  user-service:
+    build:
+      context: ./user
+    ports:
+      - "8085:8085"
+    depends_on:
+      - discovery-server
+    networks:
+      - microservices-network
+      
+  # El Guardia de Seguridad: Keycloak
+  keycloak:
+    image: quay.io/keycloak/keycloak:23.0.0
+    command: start-dev --import-realm # Se incializa en dev para pruebas
+    environment:
+      KEYCLOAK_ADMIN: admin       # User test
+      KEYCLOAK_ADMIN_PASSWORD: admin  # Pass test
+    ports:
+      - "8080:8080" # PC (8080) -> Contenedor (8080)
+    networks:
+      - microservices-network
+    volumes:
+      - ./dockerfile/realms/:/opt/keycloak/data/import/
+
+# El "router WiFi" que los conecta a todos
+networks:
+  microservices-network:
+    driver: bridge

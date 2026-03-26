@@ -9,7 +9,7 @@ import pe.castillo.product.service.IProductService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/products")
+@RequestMapping("/api/product")
 public class ProductController {
 
     @Autowired
